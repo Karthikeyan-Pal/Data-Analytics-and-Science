@@ -204,11 +204,11 @@
       <column caption='Weekly Hosp Admissions' datatype='real' name='[weekly_hosp_admissions]' role='measure' type='quantitative' />
       <column caption='Weekly Icu Admissions' datatype='real' name='[weekly_icu_admissions]' role='measure' type='quantitative' />
       <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
-        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/karth/Downloads/test (covid19).hyper' default-settings='yes' schema='Extract' sslmode='' update-time='05/24/2021 03:25:01 PM' username='tableau_internal_user'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/karth/Downloads/test (covid19).hyper' default-settings='yes' schema='Extract' sslmode='' update-time='05/24/2021 05:40:26 PM' username='tableau_internal_user'>
           <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
           <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
           <refresh>
-            <refresh-event add-from-file-path='test (covid19)' increment-value='%null%' refresh-type='create' rows-inserted='309' timestamp-start='2021-05-24 15:25:01.338' />
+            <refresh-event add-from-file-path='test (covid19)' increment-value='%null%' refresh-type='create' rows-inserted='309' timestamp-start='2021-05-24 17:40:26.876' />
           </refresh>
           <metadata-records>
             <metadata-record class='column'>
@@ -358,24 +358,32 @@
         </objects>
       </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
     </datasource>
-    <datasource caption='vaccine_manufacturer (covid19)' inline='true' name='federated.05zuzil1c3vsdv11l308f1ouerni' version='18.1'>
+    <datasource caption='world (covid19)' inline='true' name='federated.1vx24pu1msdd0h1el1hi00on3afs' version='18.1'>
       <connection class='federated'>
         <named-connections>
-          <named-connection caption='KARTHIKPC' name='mysql.0hphxyj17kphij164ykak1bmwxw5'>
+          <named-connection caption='KARTHIKPC' name='mysql.1eytses0ewxywg13cador0a522i8'>
             <connection class='mysql' dbname='covid19' odbc-native-protocol='' one-time-sql='' port='3306' server='KARTHIKPC' source-charset='' username='Karthik' workgroup-auth-mode='as-is' />
           </named-connection>
         </named-connections>
-        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='mysql.0hphxyj17kphij164ykak1bmwxw5' name='vaccine_manufacturer' table='[vaccine_manufacturer]' type='table' />
-        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='mysql.0hphxyj17kphij164ykak1bmwxw5' name='vaccine_manufacturer' table='[vaccine_manufacturer]' type='table' />
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='mysql.1eytses0ewxywg13cador0a522i8' name='world' table='[world]' type='table'>
+          <columns>
+            <column datatype='date' date-parse-format='yyyy-MM-dd' name='date' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='mysql.1eytses0ewxywg13cador0a522i8' name='world' table='[world]' type='table'>
+          <columns>
+            <column datatype='date' date-parse-format='yyyy-MM-dd' name='date' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
         <refresh increment-key='' incremental-updates='false' />
         <metadata-records>
           <metadata-record class='column'>
             <remote-name>RowNum</remote-name>
             <remote-type>20</remote-type>
             <local-name>[RowNum]</local-name>
-            <parent-name>[vaccine_manufacturer]</parent-name>
+            <parent-name>[world]</parent-name>
             <remote-alias>RowNum</remote-alias>
-            <ordinal>1</ordinal>
+            <ordinal>0</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <precision>19</precision>
@@ -384,15 +392,15 @@
               <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_BIGINT&quot;</attribute>
               <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SBIGINT&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[vaccine_manufacturer_DC9F9BB962854371B318B596DBC01736]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[world_8DAB4B0B26D643FEBDEF23E328527863]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>location</remote-name>
             <remote-type>130</remote-type>
             <local-name>[location]</local-name>
-            <parent-name>[vaccine_manufacturer]</parent-name>
+            <parent-name>[world]</parent-name>
             <remote-alias>location</remote-alias>
-            <ordinal>2</ordinal>
+            <ordinal>1</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <width>16383</width>
@@ -403,76 +411,94 @@
               <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
               <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[vaccine_manufacturer_DC9F9BB962854371B318B596DBC01736]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[world_8DAB4B0B26D643FEBDEF23E328527863]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>date</remote-name>
             <remote-type>7</remote-type>
             <local-name>[date]</local-name>
-            <parent-name>[vaccine_manufacturer]</parent-name>
+            <parent-name>[world]</parent-name>
             <remote-alias>date</remote-alias>
-            <ordinal>3</ordinal>
-            <local-type>datetime</local-type>
+            <ordinal>2</ordinal>
+            <local-type>date</local-type>
             <aggregation>Year</aggregation>
             <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIMESTAMP&quot;</attribute>
-              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIMESTAMP&quot;</attribute>
-            </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[vaccine_manufacturer_DC9F9BB962854371B318B596DBC01736]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[world_8DAB4B0B26D643FEBDEF23E328527863]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>vaccine</remote-name>
-            <remote-type>130</remote-type>
-            <local-name>[vaccine]</local-name>
-            <parent-name>[vaccine_manufacturer]</parent-name>
-            <remote-alias>vaccine</remote-alias>
-            <ordinal>4</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <width>16383</width>
-            <contains-null>true</contains-null>
-            <cast-to-local-type>true</cast-to-local-type>
-            <collation charset='296' flag='3' name='LROOT_S1' />
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
-              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
-            </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[vaccine_manufacturer_DC9F9BB962854371B318B596DBC01736]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>total_vaccinations</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[total_vaccinations]</local-name>
-            <parent-name>[vaccine_manufacturer]</parent-name>
-            <remote-alias>total_vaccinations</remote-alias>
-            <ordinal>5</ordinal>
-            <local-type>integer</local-type>
+            <remote-name>total_cases</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total_cases]</local-name>
+            <parent-name>[world]</parent-name>
+            <remote-alias>total_cases</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
             <aggregation>Sum</aggregation>
-            <precision>19</precision>
+            <precision>15</precision>
             <contains-null>true</contains-null>
             <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_BIGINT&quot;</attribute>
-              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SBIGINT&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[vaccine_manufacturer_DC9F9BB962854371B318B596DBC01736]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[world_8DAB4B0B26D643FEBDEF23E328527863]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_deaths</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total_deaths]</local-name>
+            <parent-name>[world]</parent-name>
+            <remote-alias>total_deaths</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[world_8DAB4B0B26D643FEBDEF23E328527863]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>people_fully_vaccinated</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[people_fully_vaccinated]</local-name>
+            <parent-name>[world]</parent-name>
+            <remote-alias>people_fully_vaccinated</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[world_8DAB4B0B26D643FEBDEF23E328527863]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
       <column caption='Row Num' datatype='integer' name='[RowNum]' role='dimension' type='ordinal' />
-      <_.fcp.ObjectModelTableType.true...column caption='vaccine_manufacturer' datatype='table' name='[__tableau_internal_object_id__].[vaccine_manufacturer_DC9F9BB962854371B318B596DBC01736]' role='measure' type='quantitative' />
-      <column caption='Date' datatype='datetime' name='[date]' role='dimension' type='ordinal' />
+      <_.fcp.ObjectModelTableType.true...column caption='world' datatype='table' name='[__tableau_internal_object_id__].[world_8DAB4B0B26D643FEBDEF23E328527863]' role='measure' type='quantitative' />
+      <column caption='Date' datatype='date' datatype-customized='true' name='[date]' role='dimension' type='ordinal' />
       <column caption='Location' datatype='string' name='[location]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
-      <column caption=' Total  Doses' datatype='integer' name='[total_vaccinations]' role='measure' type='quantitative' />
-      <column caption='Vaccine Manufacturer' datatype='string' name='[vaccine]' role='dimension' type='nominal' />
-      <column-instance column='[vaccine]' derivation='None' name='[none:vaccine:nk]' pivot='key' type='nominal' />
+      <column caption='People Fully Vaccinated' datatype='real' name='[people_fully_vaccinated]' role='measure' type='quantitative' />
+      <column caption='Total Cases' datatype='real' name='[total_cases]' role='measure' type='quantitative' />
+      <column caption='Total Deaths' datatype='real' name='[total_deaths]' role='measure' type='quantitative' />
+      <column-instance column='[people_fully_vaccinated]' derivation='Sum' forecast-column-base='[sum:people_fully_vaccinated:qk]' forecast-column-type='forecast-value' name='[fVal:sum:people_fully_vaccinated:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[total_cases]' derivation='Sum' forecast-column-base='[sum:total_cases:qk]' forecast-column-type='forecast-value' name='[fVal:sum:total_cases:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[total_deaths]' derivation='Sum' forecast-column-base='[sum:total_deaths:qk]' forecast-column-type='forecast-value' name='[fVal:sum:total_deaths:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Forecast Indicator]' derivation='None' forecast-column-base='[Forecast Indicator]' forecast-column-type='forecast-indicator' name='[none:Forecast Indicator:nk]' pivot='key' type='nominal' />
+      <column-instance column='[people_fully_vaccinated]' derivation='Sum' name='[sum:people_fully_vaccinated:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[total_cases]' derivation='Sum' name='[sum:total_cases:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[total_deaths]' derivation='Sum' name='[sum:total_deaths:qk]' pivot='key' type='quantitative' />
       <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
-        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/karth/Downloads/vaccine_manufacturer (covid19).hyper' default-settings='yes' schema='Extract' sslmode='' update-time='05/24/2021 03:25:01 PM' username='tableau_internal_user'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='D:/Career Improvement/Github/Data-Analytics-and-Science/COVID-19 Data Analysis- Python, SQL, Tableau/Input Data/world (covid19).hyper' default-settings='yes' schema='Extract' sslmode='' update-time='05/24/2021 05:40:28 PM' username='tableau_internal_user'>
           <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
           <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
           <refresh>
-            <refresh-event add-from-file-path='vaccine_manufacturer (covid19)' increment-value='%null%' refresh-type='create' rows-inserted='4179' timestamp-start='2021-05-24 15:25:01.745' />
+            <refresh-event add-from-file-path='world (covid19)' increment-value='%null%' refresh-type='create' rows-inserted='8133' timestamp-start='2021-05-24 17:40:28.992' />
           </refresh>
           <metadata-records>
             <metadata-record class='column'>
@@ -482,11 +508,12 @@
               <parent-name>[Extract]</parent-name>
               <remote-alias>RowNum</remote-alias>
               <ordinal>0</ordinal>
-              <family>vaccine_manufacturer</family>
+              <family>world</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>4179</approx-count>
+              <approx-count>8133</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[world_8DAB4B0B26D643FEBDEF23E328527863]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>location</remote-name>
@@ -495,52 +522,69 @@
               <parent-name>[Extract]</parent-name>
               <remote-alias>location</remote-alias>
               <ordinal>1</ordinal>
-              <family>vaccine_manufacturer</family>
+              <family>world</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
-              <approx-count>10</approx-count>
+              <approx-count>144</approx-count>
               <contains-null>true</contains-null>
               <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[world_8DAB4B0B26D643FEBDEF23E328527863]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>date</remote-name>
-              <remote-type>135</remote-type>
+              <remote-type>133</remote-type>
               <local-name>[date]</local-name>
               <parent-name>[Extract]</parent-name>
               <remote-alias>date</remote-alias>
               <ordinal>2</ordinal>
-              <family>vaccine_manufacturer</family>
-              <local-type>datetime</local-type>
+              <family>world</family>
+              <local-type>date</local-type>
               <aggregation>Year</aggregation>
-              <approx-count>152</approx-count>
+              <approx-count>161</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[world_8DAB4B0B26D643FEBDEF23E328527863]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
-              <remote-name>vaccine</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[vaccine]</local-name>
+              <remote-name>total_cases</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[total_cases]</local-name>
               <parent-name>[Extract]</parent-name>
-              <remote-alias>vaccine</remote-alias>
+              <remote-alias>total_cases</remote-alias>
               <ordinal>3</ordinal>
-              <family>vaccine_manufacturer</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>5</approx-count>
+              <family>world</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7208</approx-count>
               <contains-null>true</contains-null>
-              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[world_8DAB4B0B26D643FEBDEF23E328527863]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
-              <remote-name>total_vaccinations</remote-name>
-              <remote-type>20</remote-type>
-              <local-name>[total_vaccinations]</local-name>
+              <remote-name>total_deaths</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[total_deaths]</local-name>
               <parent-name>[Extract]</parent-name>
-              <remote-alias>total_vaccinations</remote-alias>
+              <remote-alias>total_deaths</remote-alias>
               <ordinal>4</ordinal>
-              <family>vaccine_manufacturer</family>
-              <local-type>integer</local-type>
+              <family>world</family>
+              <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>2144</approx-count>
+              <approx-count>3673</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[world_8DAB4B0B26D643FEBDEF23E328527863]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>people_fully_vaccinated</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[people_fully_vaccinated]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>people_fully_vaccinated</remote-alias>
+              <ordinal>5</ordinal>
+              <family>world</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6574</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[world_8DAB4B0B26D643FEBDEF23E328527863]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
           </metadata-records>
         </connection>
@@ -548,21 +592,27 @@
       <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
       <style>
         <style-rule element='mark'>
-          <encoding attr='color' field='[none:vaccine:nk]' type='palette'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
             <map to='#4e79a7'>
-              <bucket>&quot;Johnson&amp;Johnson&quot;</bucket>
+              <bucket>&quot;[federated.1vx24pu1msdd0h1el1hi00on3afs].[sum:total_cases:qk]&quot;</bucket>
             </map>
             <map to='#59a14f'>
-              <bucket>&quot;Sinovac&quot;</bucket>
+              <bucket>&quot;[federated.1vx24pu1msdd0h1el1hi00on3afs].[fVal:sum:total_deaths:qk]&quot;</bucket>
             </map>
             <map to='#76b7b2'>
-              <bucket>&quot;Pfizer/BioNTech&quot;</bucket>
+              <bucket>&quot;[federated.1vx24pu1msdd0h1el1hi00on3afs].[fVal:sum:total_cases:qk]&quot;</bucket>
             </map>
             <map to='#e15759'>
-              <bucket>&quot;Oxford/AstraZeneca&quot;</bucket>
+              <bucket>&quot;[federated.1vx24pu1msdd0h1el1hi00on3afs].[sum:people_fully_vaccinated:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.1vx24pu1msdd0h1el1hi00on3afs].[fVal:sum:people_fully_vaccinated:qk]&quot;</bucket>
             </map>
             <map to='#f28e2b'>
-              <bucket>&quot;Moderna&quot;</bucket>
+              <bucket>&quot;[federated.1vx24pu1msdd0h1el1hi00on3afs].[:Measure Names]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1vx24pu1msdd0h1el1hi00on3afs].[sum:total_deaths:qk]&quot;</bucket>
             </map>
           </encoding>
         </style-rule>
@@ -570,11 +620,23 @@
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
       </semantic-values>
+      <default-sorts>
+        <manual-sort column='[none:Forecast Indicator:nk]' direction='ASC'>
+          <dictionary>
+            <bucket>&quot;Actual&quot;</bucket>
+            <bucket>&quot;Estimate&quot;</bucket>
+          </dictionary>
+        </manual-sort>
+      </default-sorts>
       <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
         <objects>
-          <object caption='vaccine_manufacturer' id='vaccine_manufacturer_DC9F9BB962854371B318B596DBC01736'>
+          <object caption='world' id='world_8DAB4B0B26D643FEBDEF23E328527863'>
             <properties context=''>
-              <relation connection='mysql.0hphxyj17kphij164ykak1bmwxw5' name='vaccine_manufacturer' table='[vaccine_manufacturer]' type='table' />
+              <relation connection='mysql.1eytses0ewxywg13cador0a522i8' name='world' table='[world]' type='table'>
+                <columns>
+                  <column datatype='date' date-parse-format='yyyy-MM-dd' name='date' />
+                </columns>
+              </relation>
             </properties>
             <properties context='extract'>
               <relation name='Extract' table='[Extract].[Extract]' type='table' />
@@ -735,11 +797,11 @@
       <column caption='Total Cases' datatype='real' name='[total_cases]' role='measure' type='quantitative' />
       <column caption='Total Deaths' datatype='real' name='[total_deaths]' role='measure' type='quantitative' />
       <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
-        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/karth/Downloads/top10 (covid19).hyper' default-settings='yes' schema='Extract' sslmode='' update-time='05/24/2021 03:25:02 PM' username='tableau_internal_user'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='D:/Career Improvement/Github/Data-Analytics-and-Science/COVID-19 Data Analysis- Python, SQL, Tableau/Input Data/top10 (covid19).hyper' default-settings='yes' schema='Extract' sslmode='' update-time='05/24/2021 05:40:28 PM' username='tableau_internal_user'>
           <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
           <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
           <refresh>
-            <refresh-event add-from-file-path='top10 (covid19)' increment-value='%null%' refresh-type='create' rows-inserted='62' timestamp-start='2021-05-24 15:25:02.169' />
+            <refresh-event add-from-file-path='top10 (covid19)' increment-value='%null%' refresh-type='create' rows-inserted='62' timestamp-start='2021-05-24 17:40:28.337' />
           </refresh>
           <metadata-records>
             <metadata-record class='column'>
@@ -754,6 +816,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>62</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[top10_16B19C5E68FD4198B01B7BC10D4D6A4E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>location</remote-name>
@@ -768,6 +831,7 @@
               <approx-count>62</approx-count>
               <contains-null>true</contains-null>
               <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[top10_16B19C5E68FD4198B01B7BC10D4D6A4E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>date</remote-name>
@@ -781,6 +845,7 @@
               <aggregation>Year</aggregation>
               <approx-count>1</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[top10_16B19C5E68FD4198B01B7BC10D4D6A4E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>total_cases</remote-name>
@@ -794,6 +859,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>62</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[top10_16B19C5E68FD4198B01B7BC10D4D6A4E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>total_deaths</remote-name>
@@ -807,6 +873,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>62</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[top10_16B19C5E68FD4198B01B7BC10D4D6A4E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>people_fully_vaccinated</remote-name>
@@ -820,6 +887,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>62</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[top10_16B19C5E68FD4198B01B7BC10D4D6A4E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>population</remote-name>
@@ -833,6 +901,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>62</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[top10_16B19C5E68FD4198B01B7BC10D4D6A4E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
           </metadata-records>
         </connection>
@@ -846,287 +915,6 @@
           <object caption='top10' id='top10_16B19C5E68FD4198B01B7BC10D4D6A4E'>
             <properties context=''>
               <relation connection='mysql.0lr260l1bxvheo11d5xct0sadisr' name='top10' table='[top10]' type='table' />
-            </properties>
-            <properties context='extract'>
-              <relation name='Extract' table='[Extract].[Extract]' type='table' />
-            </properties>
-          </object>
-        </objects>
-      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
-    </datasource>
-    <datasource caption='world (covid19)' inline='true' name='federated.1vx24pu1msdd0h1el1hi00on3afs' version='18.1'>
-      <connection class='federated'>
-        <named-connections>
-          <named-connection caption='KARTHIKPC' name='mysql.1eytses0ewxywg13cador0a522i8'>
-            <connection class='mysql' dbname='covid19' odbc-native-protocol='' one-time-sql='' port='3306' server='KARTHIKPC' source-charset='' username='Karthik' workgroup-auth-mode='as-is' />
-          </named-connection>
-        </named-connections>
-        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='mysql.1eytses0ewxywg13cador0a522i8' name='world' table='[world]' type='table'>
-          <columns>
-            <column datatype='date' date-parse-format='yyyy-MM-dd' name='date' />
-          </columns>
-        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
-        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='mysql.1eytses0ewxywg13cador0a522i8' name='world' table='[world]' type='table'>
-          <columns>
-            <column datatype='date' date-parse-format='yyyy-MM-dd' name='date' />
-          </columns>
-        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
-        <refresh increment-key='' incremental-updates='false' />
-        <metadata-records>
-          <metadata-record class='column'>
-            <remote-name>RowNum</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[RowNum]</local-name>
-            <parent-name>[world]</parent-name>
-            <remote-alias>RowNum</remote-alias>
-            <ordinal>0</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <precision>19</precision>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_BIGINT&quot;</attribute>
-              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SBIGINT&quot;</attribute>
-            </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[world_8DAB4B0B26D643FEBDEF23E328527863]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>location</remote-name>
-            <remote-type>130</remote-type>
-            <local-name>[location]</local-name>
-            <parent-name>[world]</parent-name>
-            <remote-alias>location</remote-alias>
-            <ordinal>1</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <width>16383</width>
-            <contains-null>true</contains-null>
-            <cast-to-local-type>true</cast-to-local-type>
-            <collation charset='296' flag='3' name='LROOT_S1' />
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
-              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
-            </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[world_8DAB4B0B26D643FEBDEF23E328527863]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>date</remote-name>
-            <remote-type>7</remote-type>
-            <local-name>[date]</local-name>
-            <parent-name>[world]</parent-name>
-            <remote-alias>date</remote-alias>
-            <ordinal>2</ordinal>
-            <local-type>date</local-type>
-            <aggregation>Year</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[world_8DAB4B0B26D643FEBDEF23E328527863]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>total_cases</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[total_cases]</local-name>
-            <parent-name>[world]</parent-name>
-            <remote-alias>total_cases</remote-alias>
-            <ordinal>3</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <precision>15</precision>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
-              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
-            </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[world_8DAB4B0B26D643FEBDEF23E328527863]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>total_deaths</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[total_deaths]</local-name>
-            <parent-name>[world]</parent-name>
-            <remote-alias>total_deaths</remote-alias>
-            <ordinal>4</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <precision>15</precision>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
-              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
-            </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[world_8DAB4B0B26D643FEBDEF23E328527863]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>people_fully_vaccinated</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[people_fully_vaccinated]</local-name>
-            <parent-name>[world]</parent-name>
-            <remote-alias>people_fully_vaccinated</remote-alias>
-            <ordinal>5</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <precision>15</precision>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
-              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
-            </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[world_8DAB4B0B26D643FEBDEF23E328527863]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-        </metadata-records>
-      </connection>
-      <aliases enabled='yes' />
-      <column caption='Row Num' datatype='integer' name='[RowNum]' role='dimension' type='ordinal' />
-      <_.fcp.ObjectModelTableType.true...column caption='world' datatype='table' name='[__tableau_internal_object_id__].[world_8DAB4B0B26D643FEBDEF23E328527863]' role='measure' type='quantitative' />
-      <column caption='Date' datatype='date' datatype-customized='true' name='[date]' role='dimension' type='ordinal' />
-      <column caption='Location' datatype='string' name='[location]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
-      <column caption='People Fully Vaccinated' datatype='real' name='[people_fully_vaccinated]' role='measure' type='quantitative' />
-      <column caption='Total Cases' datatype='real' name='[total_cases]' role='measure' type='quantitative' />
-      <column caption='Total Deaths' datatype='real' name='[total_deaths]' role='measure' type='quantitative' />
-      <column-instance column='[people_fully_vaccinated]' derivation='Sum' forecast-column-base='[sum:people_fully_vaccinated:qk]' forecast-column-type='forecast-value' name='[fVal:sum:people_fully_vaccinated:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[total_cases]' derivation='Sum' forecast-column-base='[sum:total_cases:qk]' forecast-column-type='forecast-value' name='[fVal:sum:total_cases:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[total_deaths]' derivation='Sum' forecast-column-base='[sum:total_deaths:qk]' forecast-column-type='forecast-value' name='[fVal:sum:total_deaths:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[Forecast Indicator]' derivation='None' forecast-column-base='[Forecast Indicator]' forecast-column-type='forecast-indicator' name='[none:Forecast Indicator:nk]' pivot='key' type='nominal' />
-      <column-instance column='[people_fully_vaccinated]' derivation='Sum' name='[sum:people_fully_vaccinated:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[total_cases]' derivation='Sum' name='[sum:total_cases:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[total_deaths]' derivation='Sum' name='[sum:total_deaths:qk]' pivot='key' type='quantitative' />
-      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
-        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/karth/Downloads/world (covid19).hyper' default-settings='yes' schema='Extract' sslmode='' update-time='05/24/2021 03:25:02 PM' username='tableau_internal_user'>
-          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
-          <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
-          <refresh>
-            <refresh-event add-from-file-path='world (covid19)' increment-value='%null%' refresh-type='create' rows-inserted='8133' timestamp-start='2021-05-24 15:25:02.751' />
-          </refresh>
-          <metadata-records>
-            <metadata-record class='column'>
-              <remote-name>RowNum</remote-name>
-              <remote-type>20</remote-type>
-              <local-name>[RowNum]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>RowNum</remote-alias>
-              <ordinal>0</ordinal>
-              <family>world</family>
-              <local-type>integer</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>8133</approx-count>
-              <contains-null>true</contains-null>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>location</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[location]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>location</remote-alias>
-              <ordinal>1</ordinal>
-              <family>world</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>144</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='3' name='LROOT_S1' />
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>date</remote-name>
-              <remote-type>133</remote-type>
-              <local-name>[date]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>date</remote-alias>
-              <ordinal>2</ordinal>
-              <family>world</family>
-              <local-type>date</local-type>
-              <aggregation>Year</aggregation>
-              <approx-count>161</approx-count>
-              <contains-null>true</contains-null>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>total_cases</remote-name>
-              <remote-type>5</remote-type>
-              <local-name>[total_cases]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>total_cases</remote-alias>
-              <ordinal>3</ordinal>
-              <family>world</family>
-              <local-type>real</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>7208</approx-count>
-              <contains-null>true</contains-null>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>total_deaths</remote-name>
-              <remote-type>5</remote-type>
-              <local-name>[total_deaths]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>total_deaths</remote-alias>
-              <ordinal>4</ordinal>
-              <family>world</family>
-              <local-type>real</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>3673</approx-count>
-              <contains-null>true</contains-null>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>people_fully_vaccinated</remote-name>
-              <remote-type>5</remote-type>
-              <local-name>[people_fully_vaccinated]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>people_fully_vaccinated</remote-alias>
-              <ordinal>5</ordinal>
-              <family>world</family>
-              <local-type>real</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>6574</approx-count>
-              <contains-null>true</contains-null>
-            </metadata-record>
-          </metadata-records>
-        </connection>
-      </extract>
-      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
-      <style>
-        <style-rule element='mark'>
-          <encoding attr='color' field='[:Measure Names]' type='palette'>
-            <map to='#4e79a7'>
-              <bucket>&quot;[federated.1vx24pu1msdd0h1el1hi00on3afs].[sum:total_cases:qk]&quot;</bucket>
-            </map>
-            <map to='#59a14f'>
-              <bucket>&quot;[federated.1vx24pu1msdd0h1el1hi00on3afs].[fVal:sum:total_deaths:qk]&quot;</bucket>
-            </map>
-            <map to='#76b7b2'>
-              <bucket>&quot;[federated.1vx24pu1msdd0h1el1hi00on3afs].[fVal:sum:total_cases:qk]&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;[federated.1vx24pu1msdd0h1el1hi00on3afs].[sum:people_fully_vaccinated:qk]&quot;</bucket>
-            </map>
-            <map to='#edc948'>
-              <bucket>&quot;[federated.1vx24pu1msdd0h1el1hi00on3afs].[fVal:sum:people_fully_vaccinated:qk]&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;[federated.1vx24pu1msdd0h1el1hi00on3afs].[:Measure Names]&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;[federated.1vx24pu1msdd0h1el1hi00on3afs].[sum:total_deaths:qk]&quot;</bucket>
-            </map>
-          </encoding>
-        </style-rule>
-      </style>
-      <semantic-values>
-        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
-      </semantic-values>
-      <default-sorts>
-        <manual-sort column='[none:Forecast Indicator:nk]' direction='ASC'>
-          <dictionary>
-            <bucket>&quot;Actual&quot;</bucket>
-            <bucket>&quot;Estimate&quot;</bucket>
-          </dictionary>
-        </manual-sort>
-      </default-sorts>
-      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
-        <objects>
-          <object caption='world' id='world_8DAB4B0B26D643FEBDEF23E328527863'>
-            <properties context=''>
-              <relation connection='mysql.1eytses0ewxywg13cador0a522i8' name='world' table='[world]' type='table'>
-                <columns>
-                  <column datatype='date' date-parse-format='yyyy-MM-dd' name='date' />
-                </columns>
-              </relation>
             </properties>
             <properties context='extract'>
               <relation name='Extract' table='[Extract].[Extract]' type='table' />
@@ -1288,11 +1076,11 @@
         </groupfilter>
       </group>
       <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
-        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/karth/Downloads/vaccine (covid19).hyper' default-settings='yes' schema='Extract' sslmode='' update-time='05/24/2021 03:25:03 PM' username='tableau_internal_user'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='D:/Career Improvement/Github/Data-Analytics-and-Science/COVID-19 Data Analysis- Python, SQL, Tableau/Input Data/vaccine (covid19).hyper' default-settings='yes' schema='Extract' sslmode='' update-time='05/24/2021 05:40:29 PM' username='tableau_internal_user'>
           <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
           <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
           <refresh>
-            <refresh-event add-from-file-path='vaccine (covid19)' increment-value='%null%' refresh-type='create' rows-inserted='67' timestamp-start='2021-05-24 15:25:03.321' />
+            <refresh-event add-from-file-path='vaccine (covid19)' increment-value='%null%' refresh-type='create' rows-inserted='67' timestamp-start='2021-05-24 17:40:29.856' />
           </refresh>
           <metadata-records>
             <metadata-record class='column'>
@@ -1407,6 +1195,236 @@
           <object caption='vaccine' id='vaccine_DA608A9861A7414CBDA832EED8F96477'>
             <properties context=''>
               <relation connection='mysql.0vs3hp014tn2j91gvv8ud0jkv8vg' name='vaccine' table='[vaccine]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+    <datasource caption='vaccine_manufacturer (covid19)' inline='true' name='federated.05zuzil1c3vsdv11l308f1ouerni' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='KARTHIKPC' name='mysql.0hphxyj17kphij164ykak1bmwxw5'>
+            <connection class='mysql' dbname='covid19' odbc-native-protocol='' one-time-sql='' port='3306' server='KARTHIKPC' source-charset='' username='Karthik' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='mysql.0hphxyj17kphij164ykak1bmwxw5' name='vaccine_manufacturer' table='[vaccine_manufacturer]' type='table' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='mysql.0hphxyj17kphij164ykak1bmwxw5' name='vaccine_manufacturer' table='[vaccine_manufacturer]' type='table' />
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>RowNum</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[RowNum]</local-name>
+            <parent-name>[vaccine_manufacturer]</parent-name>
+            <remote-alias>RowNum</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_BIGINT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SBIGINT&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[vaccine_manufacturer_DC9F9BB962854371B318B596DBC01736]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>location</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[location]</local-name>
+            <parent-name>[vaccine_manufacturer]</parent-name>
+            <remote-alias>location</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16383</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[vaccine_manufacturer_DC9F9BB962854371B318B596DBC01736]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[vaccine_manufacturer]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIMESTAMP&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIMESTAMP&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[vaccine_manufacturer_DC9F9BB962854371B318B596DBC01736]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>vaccine</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[vaccine]</local-name>
+            <parent-name>[vaccine_manufacturer]</parent-name>
+            <remote-alias>vaccine</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16383</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WLONGVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[vaccine_manufacturer_DC9F9BB962854371B318B596DBC01736]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_vaccinations</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_vaccinations]</local-name>
+            <parent-name>[vaccine_manufacturer]</parent-name>
+            <remote-alias>total_vaccinations</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_BIGINT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SBIGINT&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[vaccine_manufacturer_DC9F9BB962854371B318B596DBC01736]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Row Num' datatype='integer' name='[RowNum]' role='dimension' type='ordinal' />
+      <_.fcp.ObjectModelTableType.true...column caption='vaccine_manufacturer' datatype='table' name='[__tableau_internal_object_id__].[vaccine_manufacturer_DC9F9BB962854371B318B596DBC01736]' role='measure' type='quantitative' />
+      <column caption='Date' datatype='datetime' name='[date]' role='dimension' type='ordinal' />
+      <column caption='Location' datatype='string' name='[location]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+      <column caption=' Total  Doses' datatype='integer' name='[total_vaccinations]' role='measure' type='quantitative' />
+      <column caption='Vaccine Manufacturer' datatype='string' name='[vaccine]' role='dimension' type='nominal' />
+      <column-instance column='[vaccine]' derivation='None' name='[none:vaccine:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='D:/Career Improvement/Github/Data-Analytics-and-Science/COVID-19 Data Analysis- Python, SQL, Tableau/Input Data/vaccine_manufacturer (covid19).hyper' default-settings='yes' schema='Extract' sslmode='' update-time='05/24/2021 05:40:27 PM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='vaccine_manufacturer (covid19)' increment-value='%null%' refresh-type='create' rows-inserted='4179' timestamp-start='2021-05-24 17:40:27.470' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>RowNum</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[RowNum]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>RowNum</remote-alias>
+              <ordinal>0</ordinal>
+              <family>vaccine_manufacturer</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4179</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[vaccine_manufacturer_DC9F9BB962854371B318B596DBC01736]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>location</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[location]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>location</remote-alias>
+              <ordinal>1</ordinal>
+              <family>vaccine_manufacturer</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[vaccine_manufacturer_DC9F9BB962854371B318B596DBC01736]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>date</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>date</remote-alias>
+              <ordinal>2</ordinal>
+              <family>vaccine_manufacturer</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>152</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[vaccine_manufacturer_DC9F9BB962854371B318B596DBC01736]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>vaccine</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[vaccine]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>vaccine</remote-alias>
+              <ordinal>3</ordinal>
+              <family>vaccine_manufacturer</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[vaccine_manufacturer_DC9F9BB962854371B318B596DBC01736]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_vaccinations</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_vaccinations]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_vaccinations</remote-alias>
+              <ordinal>4</ordinal>
+              <family>vaccine_manufacturer</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2144</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[vaccine_manufacturer_DC9F9BB962854371B318B596DBC01736]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:vaccine:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Johnson&amp;Johnson&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Sinovac&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Pfizer/BioNTech&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Oxford/AstraZeneca&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Moderna&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='vaccine_manufacturer' id='vaccine_manufacturer_DC9F9BB962854371B318B596DBC01736'>
+            <properties context=''>
+              <relation connection='mysql.0hphxyj17kphij164ykak1bmwxw5' name='vaccine_manufacturer' table='[vaccine_manufacturer]' type='table' />
             </properties>
             <properties context='extract'>
               <relation name='Extract' table='[Extract].[Extract]' type='table' />
@@ -2433,7 +2451,7 @@
             </zone>
             <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='94770' id='10' param='horz' w='99304' x='348' y='4586'>
               <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='94770' id='8' w='99304' x='348' y='4586'>
-                <zone h='31977' id='3' name='Top 10 Countries Cases' w='32956' x='348' y='35943'>
+                <zone h='31977' id='3' name='Top 10 Countries Cases' w='32955' x='348' y='35943'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='solid' />
@@ -2441,7 +2459,7 @@
                     <format attr='margin' value='4' />
                   </zone-style>
                 </zone>
-                <zone h='31357' id='5' name='Top 10 Countries Deaths' w='32956' x='348' y='4586'>
+                <zone h='31357' id='5' name='Top 10 Countries Deaths' w='32955' x='348' y='4586'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='solid' />
@@ -2449,7 +2467,7 @@
                     <format attr='margin' value='4' />
                   </zone-style>
                 </zone>
-                <zone h='31436' id='6' name='Top 10 Countries Vaccinated' w='32956' x='348' y='67920'>
+                <zone h='31436' id='6' name='Top 10 Countries Vaccinated' w='32955' x='348' y='67920'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='solid' />
@@ -2457,7 +2475,7 @@
                     <format attr='margin' value='4' />
                   </zone-style>
                 </zone>
-                <zone h='94770' id='7' name='World Cases &amp; Death' w='66348' x='33304' y='4586'>
+                <zone h='94770' id='7' name='World Cases &amp; Death' w='66349' x='33303' y='4586'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='solid' />
@@ -2501,8 +2519,8 @@
           </layout-options>
           <size maxheight='1250' minheight='1250' sizing-mode='vscroll' />
           <zones>
-            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='49' w='100000' x='0' y='0'>
-              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98712' id='48' param='vert' w='99304' x='348' y='644'>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='55' w='100000' x='0' y='0'>
+              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98712' id='54' param='vert' w='99304' x='348' y='644'>
                 <zone _.fcp.SetMembershipControl.false...type='title' _.fcp.SetMembershipControl.true...type-v2='title' h='3942' id='23' w='99304' x='348' y='644'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2512,7 +2530,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='239' h='31357' id='5' is-fixed='true' name='Top 10 Countries Deaths' w='32956' x='348' y='4586'>
+                <zone fixed-size='239' h='31357' id='5' is-fixed='true' name='Top 10 Countries Deaths' w='32955' x='348' y='4586'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='solid' />
@@ -2530,7 +2548,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='94770' id='7' is-fixed='true' name='World Cases &amp; Death' w='66348' x='33304' y='4586'>
+                <zone fixed-size='280' h='94770' id='7' is-fixed='true' name='World Cases &amp; Death' w='66349' x='33303' y='4586'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='solid' />
@@ -2548,7 +2566,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='243' h='31977' id='3' is-fixed='true' name='Top 10 Countries Cases' w='32956' x='348' y='35943'>
+                <zone fixed-size='243' h='31977' id='3' is-fixed='true' name='Top 10 Countries Cases' w='32955' x='348' y='35943'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='solid' />
@@ -2557,7 +2575,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='240' h='31436' id='6' is-fixed='true' name='Top 10 Countries Vaccinated' w='32956' x='348' y='67920'>
+                <zone fixed-size='240' h='31436' id='6' is-fixed='true' name='Top 10 Countries Vaccinated' w='32955' x='348' y='67920'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='solid' />
@@ -2613,68 +2631,66 @@
               </zone-style>
             </zone>
             <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='91535' id='99' param='horz' w='98438' x='781' y='7423'>
-              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='91535' id='89' param='horz' w='98438' x='781' y='7423'>
-                <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='91535' id='87' w='98438' x='781' y='7423'>
-                  <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='33983' id='84' param='horz' w='98438' x='781' y='7423'>
-                    <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='33983' id='82' w='98438' x='781' y='7423'>
-                      <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='33983' id='28' param='vert' w='98438' x='781' y='7423'>
-                        <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='33983' id='26' w='98438' x='781' y='7423'>
-                          <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='14203' id='14' param='vert' w='98438' x='781' y='7423'>
-                            <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='14203' id='11' param='horz' w='98438' x='781' y='7423'>
-                              <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='14203' id='9' w='98438' x='781' y='7423'>
-                                <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='14203' id='5' param='horz' w='49219' x='781' y='7423'>
-                                  <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='14203' id='3' w='49219' x='781' y='7423'>
-                                    <zone h='14203' id='1' name='Country A ' show-title='false' w='49219' x='781' y='7423'>
-                                      <zone-style>
-                                        <format attr='border-color' value='#9d7660' />
-                                        <format attr='border-style' value='solid' />
-                                        <format attr='border-width' value='1' />
-                                        <format attr='margin' value='4' />
-                                      </zone-style>
-                                    </zone>
+              <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='91535' id='87' w='98438' x='781' y='7423'>
+                <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='33983' id='84' param='horz' w='98438' x='781' y='7423'>
+                  <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='33983' id='82' w='98438' x='781' y='7423'>
+                    <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='33983' id='28' param='vert' w='98438' x='781' y='7423'>
+                      <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='33983' id='26' w='98438' x='781' y='7423'>
+                        <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='14203' id='14' param='vert' w='98438' x='781' y='7423'>
+                          <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='14203' id='11' param='horz' w='98438' x='781' y='7423'>
+                            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='14203' id='9' w='98438' x='781' y='7423'>
+                              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='14203' id='5' param='horz' w='49219' x='781' y='7423'>
+                                <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='14203' id='3' w='49219' x='781' y='7423'>
+                                  <zone h='14203' id='1' name='Country A ' show-title='false' w='49219' x='781' y='7423'>
+                                    <zone-style>
+                                      <format attr='border-color' value='#9d7660' />
+                                      <format attr='border-style' value='solid' />
+                                      <format attr='border-width' value='1' />
+                                      <format attr='margin' value='4' />
+                                    </zone-style>
                                   </zone>
                                 </zone>
-                                <zone h='14203' id='8' name='Country B ' show-title='false' w='49219' x='50000' y='7423'>
-                                  <zone-style>
-                                    <format attr='border-color' value='#499894' />
-                                    <format attr='border-style' value='solid' />
-                                    <format attr='border-width' value='1' />
-                                    <format attr='margin' value='4' />
-                                  </zone-style>
-                                </zone>
+                              </zone>
+                              <zone h='14203' id='8' name='Country B ' show-title='false' w='49219' x='50000' y='7423'>
+                                <zone-style>
+                                  <format attr='border-color' value='#499894' />
+                                  <format attr='border-style' value='solid' />
+                                  <format attr='border-width' value='1' />
+                                  <format attr='margin' value='4' />
+                                </zone-style>
                               </zone>
                             </zone>
                           </zone>
-                          <zone h='19780' id='16' name='Country A Vaccination Data' w='49219' x='781' y='21626'>
-                            <zone-style>
-                              <format attr='border-color' value='#9d7660' />
-                              <format attr='border-style' value='solid' />
-                              <format attr='border-width' value='1' />
-                              <format attr='margin' value='4' />
-                            </zone-style>
-                          </zone>
-                          <zone h='19780' id='17' name='Country B Vaccination Data' w='49219' x='50000' y='21626'>
-                            <zone-style>
-                              <format attr='border-color' value='#499894' />
-                              <format attr='border-style' value='solid' />
-                              <format attr='border-width' value='1' />
-                              <format attr='margin' value='4' />
-                            </zone-style>
-                          </zone>
+                        </zone>
+                        <zone h='19780' id='16' name='Country A Vaccination Data' w='49219' x='781' y='21626'>
+                          <zone-style>
+                            <format attr='border-color' value='#9d7660' />
+                            <format attr='border-style' value='solid' />
+                            <format attr='border-width' value='1' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                        <zone h='19780' id='17' name='Country B Vaccination Data' w='49219' x='50000' y='21626'>
+                          <zone-style>
+                            <format attr='border-color' value='#499894' />
+                            <format attr='border-style' value='solid' />
+                            <format attr='border-width' value='1' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
                         </zone>
                       </zone>
                     </zone>
                   </zone>
-                  <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='57552' id='85' param='vert' w='98438' x='781' y='41406'>
-                    <zone h='57552' id='86' name='Vaccine Manufacturer Data' w='98438' x='781' y='41406'>
-                      <layout-cache minheight='213' type-h='scalable' type-w='fixed' />
-                      <zone-style>
-                        <format attr='border-color' value='#000000' />
-                        <format attr='border-style' value='solid' />
-                        <format attr='border-width' value='2' />
-                        <format attr='margin' value='4' />
-                      </zone-style>
-                    </zone>
+                </zone>
+                <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='57552' id='85' param='vert' w='98438' x='781' y='41406'>
+                  <zone h='57552' id='86' name='Vaccine Manufacturer Data' w='98438' x='781' y='41406'>
+                    <layout-cache minheight='213' type-h='scalable' type-w='fixed' />
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='solid' />
+                      <format attr='border-width' value='2' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
                   </zone>
                 </zone>
               </zone>
@@ -2715,8 +2731,8 @@
           </layout-options>
           <size maxheight='1150' minheight='1150' sizing-mode='vscroll' />
           <zones>
-            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='148' w='100000' x='0' y='0'>
-              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='97916' id='147' param='vert' w='98438' x='781' y='1042'>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='154' w='100000' x='0' y='0'>
+              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='97916' id='153' param='vert' w='98438' x='781' y='1042'>
                 <zone _.fcp.SetMembershipControl.false...type='title' _.fcp.SetMembershipControl.true...type-v2='title' h='6381' id='122' w='98438' x='781' y='1042'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
