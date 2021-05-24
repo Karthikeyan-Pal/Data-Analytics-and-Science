@@ -123,6 +123,188 @@ BI Tool: Tableau
 20.	Highly used fuel resources on the earth- https://www.visualcapitalist.com/energy-consumption-by-source-and-country-1969-2018/
 
 
+# Engineering Applications of Stochastic Processses 
+
+Software: Wolfram Mathematica - Technical Computing Software
+
+•	Created functions to calculate probabilities of Binomial Random Variables. 
+
+•	Calculated probabilities & plotted functions of Single Sampling Plan.
+
+•	Calculated probabilities & plotted ASN function of Double Sampling Plan with & without curtailment.
+
+•	Computed probabilities, plotted AOQ & AFI function & deduced its maximum value for Single Sample Rectifying Inspection Plan. 
+
+•	Computed probabilities, plotted AOQ & AFI function of Continuous Sampling Plan (CSP-1). 
+
+•	Deduced Modelling Arrival Times using Poisson Process probabilities.
+
+•	Constructed probability function & plotted for Competing Poisson Process & Non- Homogeneous Poisson Process.
+
+•	Constructed Availability & Average Availability functions & plotted for Continuous-time Markov Chain Model of CFR Repairable System Models.
+
+•	Constructed & plotted functions of Availability based on optimal age-based PM policy in Age Replacement Model. 
+
+
+# House Sales in King County USA
+
+Programming Language: Python
+
+•	This dataset contains house sale prices for King County, which includes Seattle. It includes homes sold between May 2014 and May 2015. The dataset contains the following fields,
+
+       o	id :a notation for a house
+
+       o	date: Date house was sold
+
+       o	price: Price is prediction target
+
+       o	bedrooms: Number of Bedrooms/House
+
+       o	bathrooms: Number of bathrooms/bedrooms
+
+       o	sqft_living: square footage of the home
+
+       o	sqft_lot: square footage of the lot
+
+       o	floors :Total floors (levels) in house
+
+       o	waterfront :House which has a view to a waterfront
+
+       o	view: Has been viewed
+
+       o	condition :How good the condition is Overall
+
+       o	grade: overall grade given to the housing unit, based on King County grading system
+
+       o	sqft_above :square footage of house apart from basement
+
+       o	sqft_basement: square footage of the basement
+
+       o	yr_built :Built Year
+
+       o	yr_renovated :Year when house was renovated
+
+       o	zipcode:zip code
+
+       o	lat: Latitude coordinate
+
+       o	long: Longitude coordinate
+
+       o	sqft_living15 :Living room area in 2015(implies-- some renovations) This might or might not have affected the lotsize area
+
+       o	sqft_lot15 :lotSize area in 2015(implies-- some renovations)
+
+•	In data wrangling, used the method describe() to obtain a statistical summary of the dataset. Replaced the missing values using the method replace()
+
+•	Performed exploratory data analysis using box plot, regression plot from seaborn library.
+
+•	Utilized the Pandas method corr() to find the feature other than price that is most correlated with price.
+
+•	Developed a linear regression model from sklearn library to predict the ‘price’ using the list of features and calculated the R^2  
+
+•	Split the data into training and testing set. Created and fit a Ridge regression object using the training data, setting the regularization parameter to 0.1 and calculated the R^2 using the test data.
+
+
+# Loan Report
+
+Programming Language: Python
+
+•	The dataset Loan.csv contains 2000 records of the following fields:
+
+    o	 'LOAN_NUMBER'
+    
+    o	 'SAMPLE_DATE'
+    
+    o	 'FILE_REQ_DATE'
+    
+    o	 'SECOND_REQUEST_DATE'
+    
+    o	 'SENT_TO_IMAGING_DATE'
+    
+    o	 'LENDER_RESPONSE_DUE_DATE'
+    
+    o	 'DATE_LOAN_FINALIZED'
+    
+    o	 'LENDER_ID'
+    
+    o	 'LENDER_NAME'
+    
+    o	 'LENDER_LOAN_ID'
+    
+    o	 'PROP_STATE'
+    
+    o	 'NEW_CONSTRUCTION_INDICATOR'
+    
+    o	 'CONDOMINIUM_INDICATOR'
+    
+    o	 'LOAN_ORIG_DATE'
+    
+    o	 'CURRENT_BALANCE '
+    
+    o	 'FICO_SCORE'
+    
+    o	 'LTV'
+    
+    o	 'ORIG_VALUE'
+    
+    o	 'AVM_VALUE'
+    
+    o	 'FIELD_REVIEW_VALUE_SUPPORTED'
+    
+    o	 'FIELD_REVIEW_VALUE'
+    
+    o	 'PURPOSE_CODE'
+    
+    o	 'OCCUPANCY_CODE'
+    
+    o	 'LENDER_INST_TYPE_DESCRIPTION'
+    
+    o	 'UNDERWRITER_NAME'
+    
+    o	 'REVIEW_DATE'
+    
+    o	 'REVIEW_STATUS'
+    
+    o	 'DEAL_NAME'
+    
+    o	 'START_DATE'
+    
+•	Grouped data by Institution types & aggregated 'Loan Count', 'Average Current Balance', 'Max Current Balance', 'Min Current Balance' to create statistical report 1 and stored it to a csv file. 
+
+•	Grouped data by Loan_to_value_cohorts & aggregated 'Loan Count', 'Average Current Balance', 'Max Current Balance' ,'Min Current Balance' to create statistical report 2 and stored it to a csv file.
+
+•	Grouped data by Loan_to_value_cohorts & aggregating 'Loan Count', 'Average Current Balance', 'Max Current Balance', 'Min Current Balance' to create statistical report 3 and stored it to a csv file.
+
+
+# Maps, Waffle Charts, Word Cloud, Regression Plots
+
+Programming Language: Python
+
+•	The Dataset: Immigration to Canada from 1980 to 2013 contains annual data on the flows of international migrants as recorded by the countries of destination. The data presents both inflows and outflows according to the place of birth, citizenship, or place of previous / next residence both for foreigners and nationals.
+
+•	create_wafflechart is created from scratch to display progress toward goals using Matplotlib library.  This function would take the following parameters as input:
+    1.	categories: Unique categories or classes in dataframe.
+    2.	values: Values corresponding to categories or classes.
+    3.	height: Defined height of waffle chart.
+    4.	width: Defined width of waffle chart.
+    5.	colormap: Colormap class
+    6.	value_sign: In order to make our function more generalizable, we will add this parameter to address signs that could be associated with a value such as %, $, and so on.          value_sign has a default value of empty string.
+    
+•	Word clouds are created out of alice_novel.txt data using wordcloud library and superimposed the words onto a mask of any shape. Word clouds (also known as text clouds or tag clouds) work in a simple way: the more a specific word appears in a source of textual data (such as a speech, blog post, or database), the bigger and bolder it appears in the word cloud.
+
+•	Created regression plots between ‘Total Immigration’ & ‘Year’ using seaborn library.
+
+•	Created a scatter plot with a regression line to visualize the total immigration from Denmark, Sweden, and Norway to Canada from 1980 to 2013.
+
+# Summarizing Sales Data 
+
+Programming Language: Python
+
+•	Imported 3 csv files- category_sales, date_dim, store_lookup & converted it into data frames using pandas library.
+
+•	Merged the above 3 dataframes, identified the missing values(null values) in running_sales and replaced it with average value.
+
+•	Created a summary table containing ‘channel-rollup’, ‘rtl_yr’, ‘avg_running_sales’ & ‘tot_running_sales’
 
 
 
