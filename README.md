@@ -283,11 +283,17 @@ Programming Language: Python
 •	The Dataset: Immigration to Canada from 1980 to 2013 contains annual data on the flows of international migrants as recorded by the countries of destination. The data presents both inflows and outflows according to the place of birth, citizenship, or place of previous / next residence both for foreigners and nationals.
 
 •	create_wafflechart is created from scratch to display progress toward goals using Matplotlib library.  This function would take the following parameters as input:
+
     1.	categories: Unique categories or classes in dataframe.
+    
     2.	values: Values corresponding to categories or classes.
+    
     3.	height: Defined height of waffle chart.
+    
     4.	width: Defined width of waffle chart.
-    5.	colormap: Colormap class
+    
+    5.	colormap: Colormap class.
+    
     6.	value_sign: In order to make our function more generalizable, we will add this parameter to address signs that could be associated with a value such as %, $, and so on.          value_sign has a default value of empty string.
     
 •	Word clouds are created out of alice_novel.txt data using wordcloud library and superimposed the words onto a mask of any shape. Word clouds (also known as text clouds or tag clouds) work in a simple way: the more a specific word appears in a source of textual data (such as a speech, blog post, or database), the bigger and bolder it appears in the word cloud.
