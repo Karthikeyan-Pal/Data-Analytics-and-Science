@@ -312,6 +312,26 @@ Programming Language: Python
 
 •	Created a summary table containing ‘channel-rollup’, ‘rtl_yr’, ‘avg_running_sales’ & ‘tot_running_sales’
 
+# Twitter Sentiment & Text Analysis 
+
+Programming Language: Python
+
+•	Secured access to Twitter data using an application under Twitter developer account & extracted the recent 100 tweets from a Twitter user by creating an API object.  
+
+•	After transforming into pandas data frame & cleaning, created two user-defined functions -' Subjectivity' & 'Polarity' to evaluate the sentiment of each tweet.
+
+•	Using the WordCloud library, created a word cloud which is a cluster of words depicted in different sizes. The more a specific word appears in a source of textual data, the bigger and bolder it appears in the word cloud.
+
+•	Classified each tweet as 'Positive,' 'Negative,' or 'Neutral' by defining a user-defined function getAnalysis() that evaluates a tweet based on a 'Polarity' score.
+
+•	Created a scatter plot between polarity & subjectivity for all '100' tweets and a bar plot showing the value counts of Positive, Negative & Neutral tweets.
+
+•	Split the data frame into strings to stem the words to their root using natural language tool kit Snowball Stemmer. After calculating word frequency, a bar plot shows the top 20 words used in the 100 recent tweets. 
+
+•	Created a user-defined function show_ents() to scan each string and assign an entity to it & displayed a bar chart showing top organizations mentioned in the 100 tweets.
+
+
+
 
 
 
