@@ -330,6 +330,18 @@ Programming Language: Python
 
 •	Created a user-defined function show_ents() to scan each string and assign an entity to it & displayed a bar chart showing top organizations mentioned in the 100 tweets.
 
+# Analysis of IT Spending
+
+BI Tool: Microsoft Power BI
+
+•	Imported 9 CSV files into Power BI Desktop & converted them into 7 relational tables and established inter-relationships among those tables in the Model pane.
+
+•	Created 3 new measures- Budget running total, Actual running total & Forecast running total from existing columns in each table and visualized Budget vs. Forecast % in the form of Stacked bar chart by Region, Cost Element Group & IT Area. For more viz on this report, please refer to Headline.PNG
+
+•	Created 2 interactive matrices to show the difference between Budget & Forecast by Region, IT Area & Cost Element Group. Also, displayed a Filled Map showing actual spending by Country. For more viz on this report, please refer to Region.PNG
+
+•	Analyzed Budget vs. Forecast in the form of interactive Decomposition tree & explained it by Cost Element Group, Cost Element, Country, IT Department. To view this report, please refer to Decomposition.PNG
+
 
 
 
